@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::resource('posts', PostsController::class);
+
+Route::get('/', function (){
     return view('welcome');
-});
+})->name('home');
